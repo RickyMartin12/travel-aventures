@@ -912,25 +912,32 @@ data:dataValue,
     type:'POST', 
     cache: false,
     success:function(data){
-    	console.log(data);
-       if(data == 0)
-      {
-          $(".back").hide();
-          $(".load").show();
-        $('.debug-url').html("O Pedido de Informações foi submtido com sucesso. Verifique a mensagem no email: <b>"+$("#input-26").val()+"</b>.");
-          $('#submit_info')[0].reset();
-          $("#mensagem_ok").trigger('click');
-          setTimeout(function(){
-          $('#Modalok').modal('hide');},2500);
-     }
-     else
-     {
-      $(".back").hide();
-      $(".load").show();
-      $('.debug-url').html("Por favor verifique os seguintes campos:<br><br>"+data+"<br> e tente novamente.");
-        $('#Modalko').modal();
-     }
-     
+		arr=[];
+        arr =  JSON.parse(data);
+				if (arr.error)
+                {
+                    $(".back").hide();
+					$(".load").show();
+					$('.debug-url').html("Por favor verifique os seguintes campos:<br><br>"+data+"<br> e tente novamente.");
+					$('#Modalko').modal();
+                }
+                else if (arr.success == 0)
+                {
+					$(".back").hide();
+					$(".load").show();
+                    $('.debug-url').html('O Envio de Informações não foi enviado com sucesso.');
+					$('#Modalko').modal();
+                }
+                else if (arr.success == 1)
+                {
+                    $(".back").hide();
+					$(".load").show();
+					$('.debug-url').html("O Pedido de Informações foi submtido com sucesso. Verifique a mensagem no email: <b>"+$("#input-26").val()+"</b>.");
+					$('#submit_info')[0].reset();
+					$("#mensagem_ok").trigger('click');
+					setTimeout(function(){
+					$('#Modalok').modal('hide');},2500);
+                }
    },
  error:function(){
      $(".back").hide();

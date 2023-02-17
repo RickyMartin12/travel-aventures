@@ -2,24 +2,26 @@
 
 <?php
  
- // DataTables PHP library
- 
+ $servername = "containers-us-west-34.railway.app";
+ $username = "root";
+ $password = "Up5m4MTxaA6ECn2mPgaI";
+ $dbname = "railway";
+ $port = "7811";
 
- include $_SERVER['DOCUMENT_ROOT'] . "/admin/php/DataTables.php";
-  
- use
- DataTables\Database,
- DataTables\Database\Query,
- DataTables\Database\Result;
- 
- 
- 
-         $RAW_SQL_QUERY="SELECT *, data_reserva as tstp FROM reserva_pessoa ORDER BY data_reserva";        
-         $r=$db->sql($RAW_SQL_QUERY)->fetchAll();
- 
-         $arr=array("data"=>$r,"options"=>'',"files"=>'');//DATATABLE CLIENT SIDE PARSES
-         
-         echo json_encode($arr);
+
+ $RAW_SQL_QUERY="SELECT *, data_reserva as tstp FROM reserva_pessoa ORDER BY data_reserva";
+ $mysqli = new mysqli($servername, $username, $password, $dbname, $port);
+
+ $result = $mysqli->query($RAW_SQL_QUERY);
+
+$rows = $result->fetch_all(MYSQLI_ASSOC);
+$r = array();
+foreach ($rows as $row) {
+    $r[] = $row;
+}
+
+$arr=array("data"=>$r,"options"=>'',"files"=>'');//DATATABLE CLIENT SIDE PARSES
+echo json_encode($arr);
  
  
  

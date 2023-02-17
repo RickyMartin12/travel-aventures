@@ -56,7 +56,7 @@
             <b>Email: </b> $email<br /><br/>
             <b>Message: </b> $message<br />
             <hr>
-            <br>Obrigado $nome, Pronto a Comer.
+            <br>Obrigado $nome, Travel Adventures.
             </div>";
 
 
