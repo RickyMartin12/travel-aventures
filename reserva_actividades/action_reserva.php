@@ -346,56 +346,17 @@ switch ($_POST['action']){
 		
 		
 		
-		// Criando uma nova instâcia
-		$mail = new PHPMailer(true);
-		
-		$mail->CharSet = 'UTF-8';
-
-		// Informando para usar SMTP
-		$mail->isSMTP();
-
-		/*
-		  Habilitando debug SMTP
-		  0 = off (uso em produção)
-		  1 = Mensagens ao Cliente
-		  2 = Mensagens ao Cliente e Servidor
-		*/
-
-		$mail->SMTPDebug = 0;
-
-		/*
-		  Definir o nome do servidor de e-mail
-		  use $mail ->HOST = gethostbyname('email.gmail.com');
-		  se sua rede não suportar SMTP over Ipv6
-		*/
-
-		$mail->Host = 'smtp.mailgun.org';
-
-		/*
-		  Defina o numero da porta SMTP - 587 para autenticação TLS,
-		  a.k.a. RFC4409 SMTP submission
-		*/
-
-		$mail->Port = 587;
-
-		// Define o sistema de criptografia a usar- ssl (depreciado) ou tals
-		$mail->SMTPSecure = 'tls';
-
-		// Se vai usar SMTP authentication
-		$mail->SMTPAuth = true;
-
-		// Usuário para usar SMTP authentication
-		// Use o endereço completodo e-mail do Gmail
-		$mail->Username = 'postmaster@sandbox8beda8045ac64df49c67924c9dde95e7.mailgun.org';
-
-		// Senha para SMTP authentication
-		$mail->Password = '53812d403f906cf10a84c744043606a4-38029a9d-ce985080';
-
-		// Definir o remetente
-		$mail->setFrom('postmaster@sandboxe2313ce239e048f4a30fabd8f01bc24b.mailgun.org', 'Curso');
-
-		// Definir o endereço para respostas
-		$mail->addReplyTo('postmaster@sandboxe2313ce239e048f4a30fabd8f01bc24b.mailgun.org', 'Curso');
+        $mail = new PHPMailer(true);
+        $mail->CharSet = 'UTF-8';
+        $mail->isSMTP();  // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  // Specify mailgun SMTP servers
+        $mail->SMTPAuth = true; // Enable SMTP authentication
+        $mail->Username = 'ricardopeleira16@gmail.com'; // SMTP username from https://mailgun.com/cp/domains
+        $mail->Password = 'npgnxhymkcxeoobc'; // SMTP password from https://mailgun.com/cp/domains
+        $mail->SMTPSecure = 'tls';   // Enable encryption, 'ssl'
+                $mail->Port= '587';
+    
+        $mail->From = 'ricardopeleira16@gmail.com'; // The FROM field, the address sending the email 
 
 		// Definir destinatario
 		$mail->addAddress($email, 'Destinatário');
