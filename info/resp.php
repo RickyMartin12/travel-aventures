@@ -10,7 +10,7 @@
 
 	$nome = $_POST['nome'];
 	$email = $_POST['email'];
-	$mensagem = $_POST['mensagem'];
+	$message = $_POST['mensagem'];
 
 
 	$error_message = '';
@@ -32,23 +32,22 @@
     }
     if ($error_message == '')
     {
-        $mail = configMailUser();
-        
-        // Definir o remetente
-        $mail->setFrom('martinscarlos799@gmail.com', 'Curso');
+        $mail = new PHPMailer(true);
 
-        // Definir o endereço para respostas
-        $mail->addReplyTo('martinscarlos799@gmail.com', 'Curso');
+		$mail->isSMTP();  // Set mailer to use SMTP
+		$mail->Host = 'smtp.gmail.com';  // Specify mailgun SMTP servers
+		$mail->SMTPAuth = true; // Enable SMTP authentication
+		$mail->Username = 'ricardopeleira16@gmail.com'; // SMTP username from https://mailgun.com/cp/domains
+		$mail->Password = 'npgnxhymkcxeoobc'; // SMTP password from https://mailgun.com/cp/domains
+		$mail->SMTPSecure = 'tls';   // Enable encryption, 'ssl'
+				$mail->Port= '587';
 
-        // Definir destinatario
-        $mail->addAddress($email, 'Envio de Informações');
-        $mail->addAddress('ricardopeleira16@gmail.com', 'Envio de Informações');
+		$mail->From = 'ricardopeleira16@gmail.com'; // The FROM field, the address sending the email 
+		$mail->FromName = 'Pedido de Informacoes'; // The NAME field which will be displayed on arrival by the email client
+		$mail->addAddress($email);     // Recipient's email address and optionally a name to identify him
+		$mail->isHTML(true);
 
-        // Definir o Assunto
-        $mail->Subject = 'Envio de Informações';
-
-        // Definir formato de mensagem HTML
-        $mail->isHTML(true);
+		$mail->Subject = "Pedido de Informacoes";	
 
         // Corpo da Mensagem
         $corpo_informacoes = "<div style='width:95%; margin-left:2.5%;'>
@@ -65,10 +64,6 @@
 
         // Corpo alternativo caso email não suporte html
         $mail->AltBody = 'Mensangem simples';
-
-        $mail->send();
-
-
 
         // Envia a mensagem e verifica os erros
         if (!$mail->send() ) {
