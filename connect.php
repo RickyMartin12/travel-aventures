@@ -2,10 +2,10 @@
 
 date_default_timezone_set('Europe/Lisbon');//or change to whatever timezone you want
 
-$servername = "us-cdbr-east-05.cleardb.net";
-$username = "b0627ec3151c38";
-$password = "d3007f9c";
-$dbname = "heroku_79cb75d0b123bc2";
+$servername = "us-cdbr-east-06.cleardb.net";
+$username = "b8d07cb5cb4b1a";
+$password = "25d4e42";
+$dbname = "heroku_a5837ad8e3825b3";
 
 
 

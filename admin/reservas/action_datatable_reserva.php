@@ -2,11 +2,11 @@
 
 <?php
  
- $servername = "containers-us-west-34.railway.app";
- $username = "root";
- $password = "Up5m4MTxaA6ECn2mPgaI";
- $dbname = "railway";
- $port = "7811";
+ $servername = "us-cdbr-east-06.cleardb.net";
+$username = "b8d07cb5cb4b1a";
+$password = "25d4e42";
+$dbname = "heroku_a5837ad8e3825b3";
+$port = "3306";
 
 
  $RAW_SQL_QUERY="SELECT *, data_reserva as tstp FROM reserva_pessoa ORDER BY data_reserva";
