@@ -262,7 +262,7 @@ aside.main-sidebar.col-12.col-md-3.col-lg-2.px-0 {
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                   	<?php if ($_COOKIE['user'] == 'Elisa'){ ?>
-                    	<img class="user-avatar rounded-circle mr-2" src="images/avatars/Elisa.jpg" alt="User Avatar">
+                    	<img class="user-avatar rounded-circle mr-2" src="images/avatars/cert.png" alt="User Avatar">
                     <?php } ?>
                     <span class="d-none d-md-inline-block"><?php echo $_COOKIE['user'] ?></span>
                   </a>
