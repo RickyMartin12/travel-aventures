@@ -483,7 +483,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="w3ls-address mail">
 						<span class="fa fa-envelope icon" aria-hidden="true"></span>
-						<h6>Mail:</h6><a href="mailto:info@example.com">elisadias8@gmail.com</a>
+						<h6>Mail:</h6><a href="mailto:info@example.com">ricardopeleira16@gmail.com</a>
 					</div>
 					<div class="w3ls-address">
 						<span class="fa fa-phone icon" aria-hidden="true"></span>
@@ -536,7 +536,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- copyright -->
 <div class="copyright">
-		<p>© 2019 Aqui e Agora. All Rights Reserved | Design by <a href="/carros_toyota_reserva/" target="=_blank"> Elisa Dias & Ricardo Peleira </a></p>
+		<p>© 2019 Aqui e Agora. All Rights Reserved | Design by <a href="/carros_toyota_reserva/" target="=_blank"> Ricardo Peleira </a></p>
 </div>
 <!-- //copyright -->
 <!--//footer -->				
